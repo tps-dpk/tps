@@ -1,23 +1,23 @@
 <?php
-        class login {
-        public function __construct()
-	{
-	}
-        public function checklogin($username, $password = null, $link = null)
-	{
-		$db_connection = new mysqli("localhost", "tps", "", "tpspassw0rd") or die("Keine Verbindung zur DB möglich, ".mysql_error());
-		$sql = 'SELECT password FROM tbl_user WHERE username = ?';
-		$statement = $db_connection->prepare($sql);
-		$statement->bind_param("s", $username);
-		$statement->execute();
-		$statement->bind_result($dbpw);
-		while ($statement->fetch()) {
-        	     if (md5($password) == $dbpw) {
-        		 echo TRUE;
-        	     } else {
-        		 echo FALSE;
-                     }
-        	}
+class login {
+public function __construct()
+  {
+  }
+  public function checklogin($username, $password = null, $link = null)
+  {
+  $db_connection = new mysqli("localhost", "tps", "", "tpspassw0rd") or die("Keine Verbindung zur DB möglich, ".mysql_error());
+  $sql = 'SELECT password FROM tbl_user WHERE username = ?';
+  $statement = $db_connection->prepare($sql);
+  $statement->bind_param("s", $username);
+  $statement->execute();
+  $statement->bind_result($dbpw);
+  while ($statement->fetch()) {
+    if (md5($password) == $dbpw) {
+      echo TRUE;
+    } else {
+      echo FALSE;
     }
+  }
+  }
 }
 ?>
