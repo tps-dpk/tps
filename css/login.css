@@ -1,0 +1,27 @@
+body
+{
+color: black;
+background-color: white;
+padding-top: 30px;
+padding-left: 10px;
+font-family: Arial, sans-serif;
+font-size: 10px;
+}
+a
+{
+text-decoration: none;
+text-align: center;
+color: red;
+}
+#info
+{
+color: grey;
+font-weight: bold;
+font-size: 9px;
+}
+#warning
+{
+color: red;
+font-weight: bold;
+font-size: 9px;
+}

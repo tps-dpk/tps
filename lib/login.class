@@ -1,0 +1,27 @@
+<?php
+/**
+ * Created on 02.02.2009
+ * @author David Krcek switch2mac.de
+ */
+        class login {
+        public function __construct()
+	{
+	}
+        public function checklogin($username, $password = null, $link = null)
+	{
+		$db_connection = new mysqli("localhost", "root", "", "arife1") or die("Keine Verbindung zur DB möglich, ".mysql_error());
+		$sql = 'SELECT password FROM tbl_user WHERE username = ?';
+		$statement = $db_connection->prepare($sql);
+		$statement->bind_param("s", $username);
+		$statement->execute();
+		$statement->bind_result($dbpw);
+		while ($statement->fetch()) {
+        	     if (md5($password) == $dbpw) {
+        		 echo TRUE;
+        	     } else {
+        		 echo FALSE;
+                     }
+        	}
+    }
+}
+?>
