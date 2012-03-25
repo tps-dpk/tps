@@ -1,8 +1,5 @@
 <?php
-/**
- * Created on 02.02.2009
- * @author David Krcek switch2mac.de
- */
+
        session_start();
        require_once('login.class');
  // Benutzernamen holen
