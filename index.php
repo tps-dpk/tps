@@ -16,6 +16,7 @@ echo <<<EOF
 	<script type="text/javascript" src="js/login.js"></script></meta>
 	<link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/login.css" type="text/css" media="screen" />
+<br/>
 </head>
 <body>
 '<a href="login.htm?height=200&width=300" class="thickbox">Login</a>'
