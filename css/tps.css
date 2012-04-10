@@ -1,0 +1,42 @@
+@charset "UTF-8";
+#TPS_Head {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #060;
+	padding:10;
+	
+}
+
+.yui-skin-sam .yui-menu-shadow-visible {
+	  background-color:#000000;
+	  opacity:.25;
+}
+	
+.yui-menu-shadow-visible {
+	top:2px;
+	right:-3px;
+	left:-3px;
+	bottom:-3px;
+}
+
+.yui-skin-sam .yuimenuitem-selected {
+	background-color:#b3d4ff;
+}		
+
+.yui-skin-sam .yuimenuitemlabel {
+	color:#000000;
+}
+
+.yui-skin-sam .yuimenuitemlabel-disabled {
+	color:#a6a6a6;
+}
+
+.yui-skin-sam .yuimenu {
+	font-size:12px;
+}
+
+.yui-skin-sam .yuimenu .bd {
+	background-color: #ffffff;
+	border: solid 1px #808080;
+}	
+  
+  
