@@ -2,7 +2,7 @@
 <?php
 
 session_start();
-if (!empty($_SESSION['username'])) header( 'Location: ./loggedin.php' ) ;
+if (!empty($_SESSION['username'])) header( 'Location: ./public/loggedin.php' ) ;
  
 ?>
 

@@ -1,29 +1,20 @@
 <?php
-ini_set('display_errors', 'On');
-
-session_start();
-include_once('../lib/sessionhelpers.inc.php');
-
-if ( isset($_POST['login']) ) {
-    $userid = check_user($_POST['username'], $_POST['userpass']);
-    if ( $userid ) {
-        login($userid);
-    } else {
-        echo '<p>Ihre Anmeldedaten waren nicht korrekt!</p>';
-    }
+       session_start();
+       require_once('login.class');
+ // Benutzernamen holen
+$username = $_GET['username'];
+// Kennwort holen
+$password = $_GET['password'];
+// PHP Login Instanz erzeugen
+$login = new login();
+// Loginroutine aufrufen
+if($login->checklogin($username, $password)) {
+	$_SESSION['username'] = $username;
+	// Login war erfolgreich
+	echo 1;
 }
-
-if ( !logged_in() ) {
-    echo <<<END
-<form method="post" action="login.php">
-<label>Benutzername:</label> <input name="username" type="text"><br />
-<label>Passwort:</label> <input name="userpass" type="password" id="userpass"><br />
-<input name="login" type="submit" id="login" value="Einloggen">
-</form>
-END;
-} else {
-    echo '<p><a href="soll-geschuetzt-werden.php">Testseite</a></p>';
-    echo '<p><a href="logout.php">Ausloggen</a></p>';
+else {
+	// Login fehlgeschlgen
+	echo 0;
 }
-
 ?>
