@@ -6,7 +6,7 @@ public function __construct()
   public function checklogin($username, $password = null, $link = null)
   {
   $db_connection = new mysqli("localhost", "tps", "tpspassw0rd" , "tps") or die("Keine Verbindung zur DB möglich, ".mysql_error());
-  $sql = 'SELECT passwort FROM tbl_user WHERE username = ?';
+  $sql = 'SELECT passwort FROM mitarbeiter WHERE benutzername = ?';
   $statement = $db_connection->prepare($sql);
   $statement->bind_param("s", $username);
   $statement->execute();
