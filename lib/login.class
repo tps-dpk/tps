@@ -7,7 +7,8 @@ class login {
 public function __construct()
   {
   }
-  public function checklogin($username, $password = null, $link = null)
+
+public function checklogin($username, $password = null, $link = null)
   {
   $db_connection = new mysqli("localhost", "tps", "tpspassw0rd" , "tps") or die("Keine Verbindung zur DB möglich, ".mysql_error());
   $sql = 'SELECT passwort FROM mitarbeiter WHERE benutzername = ?';
@@ -18,8 +19,10 @@ public function __construct()
   while ($statement->fetch()) {
     if ($password == $dbpw) {
       echo TRUE;
+      break;
     } else {
       echo FALSE;
+      break;
     }
   }
   }
