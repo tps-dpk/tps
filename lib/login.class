@@ -12,7 +12,7 @@ public function __construct()
   $statement->execute();
   $statement->bind_result($dbpw);
   while ($statement->fetch()) {
-    if (md5($password) == $dbpw) {
+    if ($password == $dbpw) {
       echo TRUE;
     } else {
       echo FALSE;

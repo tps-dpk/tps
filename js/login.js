@@ -1,7 +1,7 @@
 function login()
 {
 var username = $("#username").val();
-var password = $("#password").val();
+var password = $("#passwort").val();
 
 if ((username == '') || (password == ''))
 {
@@ -10,7 +10,7 @@ if ((username == '') || (password == ''))
 } 
 else
 {
-   $.get("login.php?username="+username+"&password="+password, function(rc) {
+   $.get("public/login.php?username="+username+"&password="+password, function(rc) {
    if (rc == 0)
 {
 	$("#warning").html("Ihr Benutzer und/oder Kennwort sind falsch");

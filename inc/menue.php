@@ -6,7 +6,7 @@
 	<ul class="first-of-type">
 
 <?php
-if ( 1 == 0) {
+if (empty($_SESSION['username'])) {
 
 echo <<<EOF
 		<li class="yuimenubaritem"><a class="yuimenubaritemlabel thickbox" href="public/login.htm?height=200&width=300">Anmelden</a>
