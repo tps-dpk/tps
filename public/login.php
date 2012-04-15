@@ -16,7 +16,7 @@ $password = $_GET['password'];
 //$rc=$login->checklogin($username, $password);
 
 //print("returncode="+$rc);
-$rc=1;
+$rc=false;
 
 if($rc) {
 	//$_SESSION['username'] = $username;
