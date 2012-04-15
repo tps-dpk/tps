@@ -1,5 +1,8 @@
 <?php
-       session_start();
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+
+	session_start();
        require_once('login.class');
  // Benutzernamen holen
 $username = $_GET['username'];
