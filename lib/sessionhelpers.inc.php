@@ -5,8 +5,8 @@
  * @return void
  */
 function connect () { 
-    $con = mysql_connect('localhost', 'tps', 'tpspassw0rt') or exit(mysql_error());
-    mysql_select_db('datenbank', $con) or exit(mysql_error());
+    $con = mysql_connect('localhost', 'tps', 'tpspassw0rd') or exit(mysql_error());
+    mysql_select_db('tps', $con) or exit(mysql_error());
 }
 
 

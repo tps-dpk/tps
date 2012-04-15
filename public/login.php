@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 'On');
 
 session_start();
 include_once('../lib/sessionhelpers.inc.php');
