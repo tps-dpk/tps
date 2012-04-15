@@ -11,7 +11,7 @@ $password = $_GET['password'];
 
 
 // PHP Login Instanz erzeugen
-//$login = new login();
+$login = new login();
 // Loginroutine aufrufen
 //$rc=$login->checklogin($username, $password);
 
