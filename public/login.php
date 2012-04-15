@@ -20,7 +20,7 @@ if($rc) {
 	echo 1;
 } else {
 	// Login fehlgeschlgen
-	//echo 0;
-	echo 1;
+	echo 0;
+
 }
 ?>
