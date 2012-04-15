@@ -1,7 +1,7 @@
 function login()
 {
 var username = $("#username").val();
-var password = $("#passwort").val();
+var password = $("#password").val();
 
 if ((username == '') || (password == ''))
 {
