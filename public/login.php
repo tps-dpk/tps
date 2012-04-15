@@ -16,7 +16,6 @@ $login = new login();
 $rc=$login->checklogin($username, $password);
 
 //print("returncode="+$rc);
-$rc=false;
 
 if($rc) {
 	//$_SESSION['username'] = $username;
