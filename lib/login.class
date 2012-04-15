@@ -16,13 +16,12 @@ public function checklogin($username, $password = null, $link = null)
   $statement->bind_param("s", $username);
   $statement->execute();
   $statement->bind_result($dbpw);
+  print($dbpw);
   while ($statement->fetch()) {
     if ($password == $dbpw) {
       echo TRUE;
-      break;
     } else {
       echo FALSE;
-      break;
     }
   }
   }
