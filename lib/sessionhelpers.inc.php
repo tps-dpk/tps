@@ -24,7 +24,7 @@ function check_user ( $name, $pass ) {
     // escapen von \\, \x00, \n, \r, \, ', " und \x1a
     $name = mysql_real_escape_string($name);
     // escapen von Backticks (`)
-    $name = preg_replace(/\x60/, '\\\x60', $name);
+    #$name = preg_replace(/\x60/, '\\\x60', $name);
     // escapen von % und _
     $name = str_replace('%', '\%', $name);
     $name = str_replace('_', '\_', $name);
