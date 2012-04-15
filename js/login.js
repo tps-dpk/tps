@@ -19,7 +19,7 @@ if ((username == '') || (password == '')) {
     	setTimeout("window.location.reload()",1000);
     	setTimeout("tb_remove()",3000);
     } else {
-    	$("#info").html("kein gueltige Rueckgabewert beim Login.php");
+    	$("#info").html("kein gueltige Rueckgabewert "+rc+" beim Login.php");
     }
   });
 }
