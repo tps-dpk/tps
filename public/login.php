@@ -13,10 +13,9 @@ $password = $_GET['password'];
 // PHP Login Instanz erzeugen
 $login = new login();
 // Loginroutine aufrufen
-//$rc=$login->checklogin($username, $password);
+$rc=$login->checklogin($username, $password);
 
 //print("returncode="+$rc);
-$rc=false;
 
 if($rc) {
 	//$_SESSION['username'] = $username;
