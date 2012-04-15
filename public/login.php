@@ -8,6 +8,8 @@ error_reporting(E_ALL | E_STRICT);
 $username = $_GET['username'];
 // Kennwort holen
 $password = $_GET['password'];
+
+
 // PHP Login Instanz erzeugen
 $login = new login();
 // Loginroutine aufrufen
@@ -15,9 +17,9 @@ if($login->checklogin($username, $password)) {
 	$_SESSION['username'] = $username;
 	// Login war erfolgreich
 	echo 1;
-}
-else {
+} else {
 	// Login fehlgeschlgen
-	echo 0;
+	//echo 0;
+	echo 1;
 }
 ?>
