@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 'On');
-error_reporting(ALL);
+error_reporting(E_ALL | E_STRICT);
 
 	session_start();
        require_once('../lib/login.class');
@@ -14,6 +14,9 @@ $password = $_GET['password'];
 $login = new login();
 // Loginroutine aufrufen
 $rc=$login->checklogin($username, $password);
+
+echo "returncode="+$rc;
+
 if($rc) {
 	//$_SESSION['username'] = $username;
 	// Login war erfolgreich
