@@ -1,0 +1,32 @@
+Mitarbeiter
+BESTM	DP
+MEIERP	DP
+MUSTERM	DP
+DOGANA	OM
+HENKELO	OM
+KUNZES	OM
+MÜLLERJ	OM
+PETERSM	OM
+SCHULZEFOM
+
+Auftragsstatus
+C - Angelegt
+A - Angenommen
+R - Abgelehnt
+F - Abgeschlossen
+
+Kunden
+1	Stephan Kunze
+2	Michael Best
+3	Marcel Peters
+4	Ahmet Dogan
+5	Max Mustermann
+6	Heinrich Meier
+7	Helge Schneider
+8	Heinrich Schmitt
+9	Heiner Müller
+10	Florian Schulze
+
+
+
+
