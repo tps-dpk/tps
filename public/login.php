@@ -15,7 +15,7 @@ $login = new login();
 // Loginroutine aufrufen
 $rc=$login->checklogin($username, $password);
 if($rc) {
-	$_SESSION['username'] = $username;
+	//$_SESSION['username'] = $username;
 	// Login war erfolgreich
 	echo 1;
 } else {
