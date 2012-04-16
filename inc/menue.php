@@ -16,7 +16,7 @@ EOF;
 }else {
 
 echo <<<EOF
-		<li class="yuimenubaritem"><a class="yuimenubaritemlabel thickbox" href="logout.php">Abmelden</a>
+		<li class="yuimenubaritem"><a class="yuimenubaritemlabel thickbox" href="public/logout.php">Abmelden</a>
 		</li>
 		<li class="yuimenubaritem"><a class="yuimenubaritemlabel">OM</a>
 	
