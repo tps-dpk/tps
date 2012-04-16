@@ -19,9 +19,9 @@ public function checklogin($username, $password = null, $link = null)
   print($dbpw);
   while ($statement->fetch()) {
     if ($password == $dbpw) {
-      echo TRUE;
+      return TRUE;
     } else {
-      echo FALSE;
+      return FALSE;
     }
   }
   }
