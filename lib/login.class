@@ -8,9 +8,16 @@ public function __construct()
   {
   }
 
+public function dbc()
+  {
+  $dbc =new "localhost", "tps", "tpspassw0rd" , "tps") or die("Keine Verbindung zur DB möglich, ".mysql_error());
+  return $dbc;
+  }
+
 public function checklogin($username, $password = null, $link = null)
   {
-  $db_connection = new mysqli("localhost", "tps", "tpspassw0rd" , "tps") or die("Keine Verbindung zur DB möglich, ".mysql_error());
+  //$db_connection = new mysqli("localhost", "tps", "tpspassw0rd" , "tps") or die("Keine Verbindung zur DB möglich, ".mysql_error());
+  $db_connection = dbc;
   $sql = 'SELECT passwort FROM mitarbeiter WHERE benutzername = ?';
   $statement = $db_connection->prepare($sql);
   $statement->bind_param("s", $username);
@@ -26,4 +33,6 @@ public function checklogin($username, $password = null, $link = null)
   }
   }
 }
+
+
 ?>
