@@ -1,10 +1,15 @@
 @charset "UTF-8";
 #TPS_Head {
+	position:relative;left:25px; width:380px;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	color: #060;
 	padding:10;
 	
 }
+
+#Menue {  position:relative;left:25px; width:400px;  }
+
+#Form {  position:relative; top:5px; left:25px; width:380px; background-color:#dfd; padding:10; }
 
 .yui-skin-sam .yui-menu-shadow-visible {
 	  background-color:#000000;
@@ -38,5 +43,43 @@
 	background-color: #ffffff;
 	border: solid 1px #808080;
 }	
-  
-  
+
+input, textarea {
+		border:1px solid #000;
+		background-color:#fff;
+}
+
+.validation-failed { /* for textboxes, textareas, passwords */
+		border:1px dashed #F33;
+		background-color:#FCC;
+}
+
+.validation-failed-cr { /* for checkboxes and radios */
+
+}
+
+.validation-failed-sel { /* for selects */
+
+}
+
+.validation-passed { /* for textboxes, textareas, passwords */
+		border:1px solid #6C6;
+		background-color:#CFF;
+}
+
+.validation-passed-cr { /* for checkboxes and radios */
+
+}
+
+.validation-passed-sel { /* for selects */
+
+}
+
+.button {
+		border:1px solid #0B5C8B;
+		background-color:#0B80CD;
+		color:#fff;
+}
+
+div { border:1px solid #888; }
+

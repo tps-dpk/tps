@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
 <title>Task Planning System</title>
     <link type='text/css' href='YUI/2.9/build/fonts/fonts-min.css' rel='stylesheet'/>
     <link type='text/css' href='YUI/2.9/build/menu/assets/skins/sam/menu.css' rel='stylesheet'/>

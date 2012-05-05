@@ -1,10 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Unbenanntes Dokument</title>
-</head>
+<? include ("inc/header.php"); ?>
+<? include ("inc/widget.php"); ?>
+<? include ("inc/form.php"); ?>
 
-<body>
-</body>
-</html>
+
+
+
+<div id="Form">
+<h2>Aufgabe hinzuf&uuml;gen</h2>
+<br />
+<form method="get" action="#" name="task" id="task_form">
+<table cellpadding="0" cellspacing="0" border="0" id="dataTable">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Wert</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><label for="auftragsnummer">Auftragsnummer: </label></td>
+      <td><input name="auftragsnummer" id="auftragsnummer" class="required validate-number" type="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="beschreibung">Beschreibung: </label></td>
+      <td><input name="beschreibung" id="beschreibung" class="required validate-alpha" type="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="zeit_von">Von: </label></td>
+      <td><input name="zeit_von" id="zeit_von" class="required" type="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="zeit_bis">Bis: </label></td>
+      <td><input name="zeit_bis" id="zeit_bis" class="required" type="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="auftragsstatus">Auftragsstatus: </label></td>
+      <td><input name="auftragsstatus" id="auftragsstatus" class="validate-alpha" type="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="kundennummer">Kundennummer: </label></td>
+      <td><input name="kundennummer" id="kundennummer" class="validate-number" type="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="benutzername">Benutzername: </label></td>
+      <td><input name="benutzername" id="benutzername" class="validate-alpha" type="text" /></td>
+    </tr>
+   </tbody>
+</table>
+<input name="submit" value="Submit Form" class="button" type="submit">
+</form>
+</div>
+
+<p id="info"></p>
+<p id="warning"></p>
+
+<? include ("inc/footer.php"); ?>

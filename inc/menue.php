@@ -1,7 +1,8 @@
 <div id="TPS_Head">
 <h1>Task Planning System</h1>
 </div>
-<div id="OAWidget" class="yuimenubar yuimenubarnav">
+<div id="Menue">
+  <div id="OAWidget" class="yuimenubar yuimenubarnav">
 	<div class="bd">
 	<ul class="first-of-type">
 
@@ -9,7 +10,7 @@
 if (empty($_SESSION['username'])) {
 
 echo <<<EOF
-		<li class="yuimenubaritem"><a class="yuimenubaritemlabel thickbox" href="public/login.htm?height=200&width=300">Anmelden</a>
+		<li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="public/login.php">Anmelden</a>
 		</li>
 EOF;
 
@@ -23,7 +24,7 @@ echo <<<EOF
 			<div id="operator" class="yuimenu">
 				<div class="bd">                                        
 					<ul>
-						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="#operator_add">Anlegen</a></li>
+						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="operator_add.php">Anlegen</a></li>
 						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="operator_list.php">Anzeigen</a></li>
 					</ul>
 				</div>
@@ -34,7 +35,7 @@ echo <<<EOF
 			<div id="custom" class="yuimenu">
 				<div class="bd">                    
 					<ul>
-						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="#custom_add">Anlegen</a></li>
+						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="customer_add.php">Anlegen</a></li>
 						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="customer_list.php">Anzeigen</a></li>
 					</ul>
 				</div>
@@ -47,7 +48,7 @@ echo <<<EOF
 			<div id="task" class="yuimenu">
 				<div class="bd">                    
 					<ul>
-						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="#task_add">Anlegen</a></li>
+						<li class="yuimenuitem"><a class="yuimenuitemlabel thickbox" href="task_add.php?height=200&width=300">Anlegen</a></li>
 						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="task_list.php">Anzeigen</a></li>
 					</ul>                    
 				</div>
@@ -60,6 +61,7 @@ EOF;
 ?>               
 	</ul>            
 	</div>
+  </div>
 </div>
 
 

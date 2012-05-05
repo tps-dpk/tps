@@ -7,13 +7,13 @@ if ((username == '') || (password == '')) {
     $("#info").html('');
     $("#warning").html("Benutzername und Kennwort erforderlich !");
 } else {
-   $.get("public/login.php?username="+username+"&password="+password, function(rc) {
+   $.get("public/connect.php?username="+username+"&password="+password, function(rc) {
    if (rc == 0) {
 	   $("#warning").html("Ihr Benutzer und/oder Kennwort sind falsch");
 	   $("#info").html('');
    } else if (rc == 1) {
 	   $("#info").html('');
-	   $("warning").html('');
+	   $("#warning").html('');
 	   $("#loginDiv").html("Login erfolgreich");
 
     	setTimeout("window.location.reload()",1000);
