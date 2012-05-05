@@ -36,8 +36,8 @@ $stmt->bind_result($benutzername,$passwort,$mitarbeitertyp,$vorname,$nachname,$s
 while ($stmt->fetch()) {
 ?>
     <tr>
-      <td align="center"><a href="/operator_edit?benutzernahme=<?php echo $benutzername?>"><img src="img/icon_edit.png" ></a></td>
-      <td align="center"><a href="/operator_delete?benutzernahme=<?php echo $benutzername?>"><img src="img/icon_delete.png"></a></td>
+      <td align="center"><a href="/operator_edit?benutzernahme=<?php echo $benutzername?>"><img src="images/icon_edit.png" ></a></td>
+      <td align="center"><a href="/operator_delete?benutzernahme=<?php echo $benutzername?>"><img src="images/icon_delete.png"></a></td>
       <td><?php echo $benutzername ?></td>
       <td><?php echo $mitarbeitertyp ?></td>
       <td><?php echo $vorname ?></td>

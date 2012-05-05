@@ -1,6 +1,6 @@
 <? include ("inc/header.php"); ?>
 <? include ("inc/widget.php"); ?>
-<h2>Aufgaben</h2>
+
 <?php
 
 ini_set('display_errors', 'On');
@@ -15,13 +15,14 @@ $stmt->bind_result($auftragsnummer,$beschreibung,$zeit_von,$zeit_bis,$auftragsst
 
 ?>
 
+<div id="Content">
+<h2>Aufgaben</h2>
 </br>
 <table cellpadding="0" cellspacing="0" border="0" id="dataTable">
   <thead>
     <tr>
       <th>bearbeiten</th>
       <th>löschen</th>
-      <th>Auftragsnummer</th>
       <th>Beschreibung</th>
       <th>von</th>
       <th>bis</th>
@@ -31,14 +32,14 @@ $stmt->bind_result($auftragsnummer,$beschreibung,$zeit_von,$zeit_bis,$auftragsst
     </tr>
   </thead>
   <tbody>
+    <!--Loop start, you could use a repeat region here-->
 <?php
 while ($stmt->fetch()) {
 ?>
-    <!--Loop start, you could use a repeat region here-->
+    
     <tr>
-      <td align="center"><a href="/task_edit?auftrag=<?php echo $auftragsnummer?>"><img src="img/icon_edit.png" ></a></td>
-      <td align="center"><a href="/task_delete?auftrag=<?php echo $auftragsnummer?>"><img src="img/icon_delete.png"></a></td>
-      <td><?php echo $auftragsnummer?></td>
+      <td align="center"><a href="/task_edit?auftrag=<?php echo $auftragsnummer?>"><img src="images/icon_edit.png" ></a></td>
+      <td align="center"><a href="/task_delete?auftrag=<?php echo $auftragsnummer?>"><img src="images/icon_delete.png"></a></td>
       <td><?php echo $beschreibung?></td>
       <td><?php echo $zeit_von?></td>
       <td><?php echo $zeit_bis?></td>
@@ -53,5 +54,6 @@ while ($stmt->fetch()) {
     <!--Loop end-->
   </tbody>
 </table>
+</div>
 
 <? include ("inc/footer.php"); ?>

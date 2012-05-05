@@ -1,15 +1,39 @@
 @charset "UTF-8";
 #TPS_Head {
-	position:relative;left:25px; width:380px;
+	position:relative;left:225px; width:380px;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	color: #060;
 	padding:10;
 	
 }
 
-#Menue {  position:relative;left:25px; width:400px;  }
+#Menue {  position:relative;left:225px; width:400px;  }
 
-#Form {  position:relative; top:5px; left:25px; width:380px; background-color:#dfd; padding:10; }
+#Content {
+	position:relative;
+	top:5px;
+	left:10px;
+	width:780px;
+	background-color:#FFFFFF;
+	padding:10;
+}
+
+#Form {
+	position:relative;
+	top:5px;
+	left:225px;
+	width:380px;
+	background-color:#9FF;
+	padding:10;
+}
+#Messages {
+	position:relative;
+	top:5px;
+	left:225px;
+	width:380px;
+	background-color:#F1FFEE;
+	padding:10;
+}
 
 .yui-skin-sam .yui-menu-shadow-visible {
 	  background-color:#000000;

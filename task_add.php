@@ -51,7 +51,9 @@
 </form>
 </div>
 
+<div id="Messages">
 <p id="info"></p>
 <p id="warning"></p>
+</div>
 
 <? include ("inc/footer.php"); ?>

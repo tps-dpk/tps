@@ -39,8 +39,8 @@ while ($stmt->fetch()) {
 ?>
 
     <tr>
-      <td align="center"><a href="/customer_edit?kundennumer=<?php echo $kundennummer; ?>"><img src="img/icon_edit.png" ></a></td>
-      <td align="center"><a href="/customer_delete?kundennumer=<?php echo $kundennummer; ?>"><img src="img/icon_delete.png"></a></td>
+      <td align="center"><a href="/customer_edit?kundennumer=<?php echo $kundennummer; ?>"><img src="images/icon_edit.png" ></a></td>
+      <td align="center"><a href="/customer_delete?kundennumer=<?php echo $kundennummer; ?>"><img src="images/icon_delete.png"></a></td>
       <td><?php echo $kundennummer; ?></td>
       <td><?php echo $name; ?></td>
       <td><?php echo $strasse; ?></td>

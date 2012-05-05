@@ -9,18 +9,12 @@
 	<script type='text/javascript' src='YUI/2.9/build/container/container_core-min.js'>		</script>
 	<script type='text/javascript' src='YUI/2.9/build/menu/menu-min.js'></script>
 
-	
-	<title>jQuery ThickBox Login Box</title>
+	<script type="text/javascript" src="js/tps.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 	<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
 	<script type="text/javascript" src="js/thickBox-compressed.js"></script>
-	<script type="text/javascript" src="js/login.js"></script></meta>
-    <script type="text/javascript" src="js/tps.js"></script></meta>
 	<link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/login.css" type="text/css" media="screen" />
-	<link href="css/tps.css" rel="stylesheet" type="text/css">
-    
-       
-    
+	<link href="css/tps.css" rel="stylesheet" type="text/css">    
 </head>
 
 <body>

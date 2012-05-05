@@ -1,13 +1,13 @@
-
-<?php
-
-session_start();
-//if (!empty($_SESSION['username'])) header( 'Location: ./public/loggedin.php' ) ;
- 
-?>
-
 <? include ("inc/header.php"); ?>
+<? include ("inc/form.php"); ?>
 
-<h2></h2>
+<div id="Form">
+<h2>Bitte anmelden, um Task Planning System zu benutzen</h2>
+<br />
+</div>
+<div id="Messages">
+<p id="info"></p>
+<p id="warning"></p>
+</div>
 
 <? include ("inc/footer.php"); ?>

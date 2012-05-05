@@ -7,10 +7,11 @@
 	<ul class="first-of-type">
 
 <?php
+session_start();
 if (empty($_SESSION['username'])) {
 
 echo <<<EOF
-		<li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="public/login.php">Anmelden</a>
+		<li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="login.php">Anmelden</a>
 		</li>
 EOF;
 
@@ -48,7 +49,7 @@ echo <<<EOF
 			<div id="task" class="yuimenu">
 				<div class="bd">                    
 					<ul>
-						<li class="yuimenuitem"><a class="yuimenuitemlabel thickbox" href="task_add.php?height=200&width=300">Anlegen</a></li>
+						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="task_add.php">Anlegen</a></li>
 						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="task_list.php">Anzeigen</a></li>
 					</ul>                    
 				</div>

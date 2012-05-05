@@ -8,7 +8,7 @@
 <h2>Mitarbeiter hinzuf&uuml;gen</h2>
 <br />
 <form method="get" action="#" name="operator" id="operator_form">
-<table cellpadding="0" cellspacing="0" border="0" id="dataTable">
+<table cellpadding="5" cellspacing="5" border="0" id="dataTable">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -46,8 +46,10 @@
 </form>
 </div>
 
- 
+<div id="Messages">
 <p id="info"></p>
 <p id="warning"></p>
+</div>
+
 
 <? include ("inc/footer.php"); ?>

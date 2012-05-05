@@ -12,11 +12,11 @@ if ((username == '') || (password == '')) {
 	   $("#warning").html("Ihr Benutzer und/oder Kennwort sind falsch");
 	   $("#info").html('');
    } else if (rc == 1) {
-	   $("#info").html('');
+	   
 	   $("#warning").html('');
-	   $("#loginDiv").html("Login erfolgreich");
-
-    	setTimeout("window.location.reload()",1000);
+	   $("#info").html("Login erfolgreich");
+        window.location.pathname="/tps/loggedin.php";
+    	setTimeout("window.location.reload()",2000);
     	setTimeout("tb_remove()",3000);
     } else {
     	$("#info").html("kein gueltige Rueckgabewert ("+rc+") beim Login.php");
