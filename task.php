@@ -161,6 +161,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 </table>
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
+<input type="button" VALUE="Zurück" class="button" onClick="history.back()">
 </form>
 </div>
 
