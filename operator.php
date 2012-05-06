@@ -25,6 +25,9 @@ if ($function =="edit" ) {
 } else { 
 	$action="hinzuf&uuml;gen"; 
 };
+
+$mitarbeitertypb['OM']="Operative Mitarbeiter";
+$mitarbeitertypb['DP']="Diponent";
 ?>
 
 
@@ -32,7 +35,7 @@ if ($function =="edit" ) {
 <div id="Form">
 <h2>Mitarbeiter <?php echo $action;  ?></h2>
 <br />
-<form method="get" action="#" name="operator" id="operator_form">
+<form method="get" action="#" name="operator" id="operator_form" accept-charset="utf-8" >
 <table>
   <thead>
     <tr>
@@ -51,7 +54,26 @@ if ($function =="edit" ) {
     </tr>
     <tr>
       <td><label for="mitarbeitertyp">Mitarbeitertyp: </label></td>
-      <td><input name="mitarbeitertyp" id="mitarbeitertyp" title="Mitarbeitertyp ist notwendig" class="required" type="text" value="<?php echo "$mitarbeitertyp";?>" <?php echo $visible['mitarbeitertyp']?>/></td>
+      <td>
+<?php
+if ( $visible['mitarbeitertyp']=="readonly" ) {
+?>
+	  	<input name="mitarbeitertyp" id="mitarbeitertyp" type="text" value="<?php echo "$mitarbeitertyp";?>" <?php echo $visible['mitarbeitertyp'];?> />
+<?php
+} else {
+?>
+
+    	<select name="mitarbeitertyp" class="validate-not-first" title="Mitarbeitertyp ist notwendig" >
+            <option value="">Select:</option>
+            <option value="DP" <?php if ( $mitarbeitertyp == "DP" ) { echo 'selected="selected"';}; ?>><?php echo $mitarbeitertypb['DP']?></option>
+            <option value="OM" <?php if ( $mitarbeitertyp == "OM" ) { echo 'selected="selected"';}; ?>><?php echo $mitarbeitertypb['OM']?></option>
+    	</select>
+<?php
+}
+?>
+      </td>      
+      
+      
     </tr>
     <tr>
       <td><label for="vorname">Vorname: </label></td>
@@ -63,7 +85,27 @@ if ($function =="edit" ) {
     </tr>
     <tr>
       <td><label for="status">Status: </label></td>
-      <td><input name="status" id="status" title="Telefonnummer ist notwendig" class="required" type="text" value="<?php echo "$status";?>" <?php echo $visible['status']?>/></td>
+      <td>
+<?php
+if ( $visible['status']=="readonly" ) {
+?>
+			<!---
+            <input name="status" id="status" type="text" value="<?php echo "$status";?>" <?php echo $visible['status']; ?> />
+            -->
+            <input type="radio" name="status" class="validate-one-required" title="Status ist notwendig" <?php  if ( $status == "X" ) {  echo "checked"; } ?> value="X" readonly="readonly" onclick="return(false);"> Aktiv  
+      		<input type="radio" name="status" <?php  if ( $status == "" ) {  echo "checked"; } ?> value="" readonly="readonly" onclick="return(false);"> Deaktiv<br>
+            
+<?php
+} else {
+?>
+      		<input type="radio" name="status" class="validate-one-required" title="Status ist notwendig" <?php  if ( $status == "X" ) {  echo "checked"; } ?> value="X"> Aktiv  
+      		<input type="radio" name="status" <?php  if ( $status == "" ) {  echo "checked"; } ?> value=""> Deaktiv<br>
+<?php
+}
+?>
+      
+      </td>
+      
     </tr>
    </tbody>
 </table>
