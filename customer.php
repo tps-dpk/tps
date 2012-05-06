@@ -1,5 +1,4 @@
 <? include ("inc/header.php"); ?>
-<? include ("inc/widget.php"); ?>
 <? include ("inc/form.php"); ?>
 
 <?php
@@ -11,6 +10,7 @@ $plz = $_GET['plz'];
 $ort = $_GET['ort'];
 $telefonnummer = $_GET['telefonnummer'];
 $function = $_GET['function'];
+$submit = $_GET['submit'];
 
 if ($function =="edit" ) { 
 	$action="ändern"; 
@@ -30,6 +30,89 @@ if ($function =="edit" ) {
 };
 
 
+?>
+
+
+<?php 
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+include 'lib/mysql.php';
+
+if (mysqli_connect_errno() == 0) {
+
+	if ($submit =="add" ) { 
+		$sql = 'INSERT INTO kunde (`name`, `strasse`, `hausnummer`, `plz`, `ort`, `telefonnummer`) VALUES (?, ?, ?, ?, ?, ? )';
+		$statement = $db_connection->prepare( $sql );
+		$statement->bind_param( 'ssiiss',$name, $strasse, $hausnummer, $plz, $ort, $telefonnummer );
+		$statement->execute();
+		// Pruefen ob der Eintrag efolgreich war
+		if ($statement->affected_rows == 1)
+		{
+			$info="Kunde ($name) wurde angelegt";
+		}
+		else
+		{
+			$warnung="Der Kunden-Eintrag konnte nicht hinzugef&uuml;gt werden.";
+		}
+
+	
+	
+	
+	} elseif ( $submit == "edit") { 
+	
+		$sql = 'UPDATE kunde SET name = ?, strasse = ?, hausnummer = ?, plz = ?, ort = ?, telefonnummer = ? where kundennummer = ?';
+	
+		$statement = $db_connection->prepare( $sql );
+		$statement->bind_param( 'sssisss', $name, $strasse, $hausnummer, $plz, $ort, $telefonnummer, $kundennummer );
+		$statement->execute();
+		// Pruefen ob der Eintrag efolgreich war
+		if ($statement->affected_rows == 1)
+		{
+			$info="Kunde ($name) wurde geändert.";
+		}
+		else
+		{
+			$warnung="Der Kunde-Eintrag konnte nicht geändert.";
+		}
+	} elseif ( $submit == "delete") { 
+		$sql = 'SELECT count(*)  FROM auftrag WHERE kundennummer = ?';
+		$statement = $db_connection->prepare($sql);
+		$statement->bind_param( 's', $kundennummer );
+		$statement->execute();
+		$statement->bind_result( $count );
+		$statement->fetch();
+		unset($statement);
+	
+		if ( $count == 0 ) {
+	
+			$sql = 'DELETE FROM kunde WHERE kundennummer = ?';
+	
+			$statement = $db_connection->prepare( $sql );
+			$statement->bind_param( 's', $kundennummer );
+			$statement->execute();
+			// Pruefen ob der Eintrag efolgreich war
+			if ($statement->affected_rows == 1)
+			{
+				$info="Kunde ($name) wurde gelöscht.";
+			}
+			else
+			{
+				$warnung="Der Kunden-Eintrag konnte nicht gelöscht werden.";
+			}
+		} else {
+			$warnung="Kunde ($name) hat Aufträge ($count) zugeordnet und kann deshalb nicht gelöscht werden.";
+		}
+	
+	};
+
+
+
+} else {
+		$warnung='DB Problem!';
+}
+
+
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
 
 <div id="Form">
@@ -76,13 +159,13 @@ if ($function =="edit" ) {
 </table>
 
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
-<input name="submit" value="Submit Form" class="button" type="submit">
+<input name="submit" value="<?php echo $function;?>" class="button" type="submit">
 </form>
 </div>
 
 <div id="Messages">
-<p id="info"></p>
-<p id="warning"></p>
+<p id="info"><?php echo $info;?></p>
+<p id="warning"><?php echo $warnung;?></p>
 </div>
 
 
