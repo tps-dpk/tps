@@ -1,6 +1,6 @@
 <? include ("inc/header.php"); ?>
 <? include ("inc/widget.php"); ?>
-<h2>Kunden</h2>
+
 <?php
 
 ini_set('display_errors', 'On');
@@ -14,13 +14,14 @@ $stmt->execute();
 $stmt->bind_result($kundennummer,$name,$strasse,$hausnummer,$plz,$ort,$telefonnummer);
 
 ?>
-
+<div id="Content">
+<h2>Kunden</h2>
 </br>
 <table cellpadding="0" cellspacing="0" border="0" id="dataTable">
   <thead>
     <tr>
-      <th>bearbeiten</th>
-      <th>löschen</th>
+      <th></th>
+      <th></th>
       <th>Kundennummer</th>
       <th>Name</th>
       <th>Strasse</th>
@@ -39,8 +40,8 @@ while ($stmt->fetch()) {
 ?>
 
     <tr>
-      <td align="center"><a href="/customer_edit?kundennumer=<?php echo $kundennummer; ?>"><img src="images/icon_edit.png" ></a></td>
-      <td align="center"><a href="/customer_delete?kundennumer=<?php echo $kundennummer; ?>"><img src="images/icon_delete.png"></a></td>
+      <td align="center"><a href="customer.php?<?php echo "kundennummer=$kundennummer&name=$name&strasse=$strasse&hausnummer=$hausnummer&plz=$plz&ort=$ort&telefonnummer=$telefonnummer&function=edit"; ?>"><img src="images/icon_edit.png"  alt="bearbeiten" ></a></td>
+      <td align="center"><a href="customer.php?<?php echo "kundennummer=$kundennummer&name=$name&strasse=$strasse&hausnummer=$hausnummer&plz=$plz&ort=$ort&telefonnummer=$telefonnummer&function=delete"; ?>"><img src="images/icon_delete.png" alt="löschen"></a></td>
       <td><?php echo $kundennummer; ?></td>
       <td><?php echo $name; ?></td>
       <td><?php echo $strasse; ?></td>
@@ -55,5 +56,6 @@ while ($stmt->fetch()) {
 ?>
   </tbody>
 </table>
+</div>
 
 <? include ("inc/footer.php"); ?>

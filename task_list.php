@@ -1,6 +1,8 @@
 <? include ("inc/header.php"); ?>
 <? include ("inc/widget.php"); ?>
 
+
+
 <?php
 
 ini_set('display_errors', 'On');
@@ -21,8 +23,8 @@ $stmt->bind_result($auftragsnummer,$beschreibung,$zeit_von,$zeit_bis,$auftragsst
 <table cellpadding="0" cellspacing="0" border="0" id="dataTable">
   <thead>
     <tr>
-      <th>bearbeiten</th>
-      <th>löschen</th>
+      <th></th>
+      <th></th>
       <th>Beschreibung</th>
       <th>von</th>
       <th>bis</th>
@@ -38,8 +40,8 @@ while ($stmt->fetch()) {
 ?>
     
     <tr>
-      <td align="center"><a href="/task_edit?auftrag=<?php echo $auftragsnummer?>"><img src="images/icon_edit.png" ></a></td>
-      <td align="center"><a href="/task_delete?auftrag=<?php echo $auftragsnummer?>"><img src="images/icon_delete.png"></a></td>
+      <td align="center"><a href="/task_edit?auftrag=<?php echo $auftragsnummer?>"><img src="images/icon_edit.png" alt="bearbeiten"></a></td>
+      <td align="center"><a href="/task_delete?auftrag=<?php echo $auftragsnummer?>"><img src="images/icon_delete.png" alt="löschen"></a></td>
       <td><?php echo $beschreibung?></td>
       <td><?php echo $zeit_von?></td>
       <td><?php echo $zeit_bis?></td>
@@ -55,5 +57,6 @@ while ($stmt->fetch()) {
   </tbody>
 </table>
 </div>
+
 
 <? include ("inc/footer.php"); ?>

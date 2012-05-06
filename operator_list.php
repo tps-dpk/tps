@@ -1,6 +1,6 @@
 <? include ("inc/header.php"); ?>
 <? include ("inc/widget.php"); ?>
-<h2>Operative Mitarbeiter</h2>
+
 <?php
 
 ini_set('display_errors', 'On');
@@ -15,13 +15,14 @@ $stmt->bind_result($benutzername,$passwort,$mitarbeitertyp,$vorname,$nachname,$s
 
 ?>
 
-
+<div id="Content">
+<h2>Operative Mitarbeiter</h2>
 </br>
 <table cellpadding="0" cellspacing="0" border="0" id="dataTable">
   <thead>
     <tr>
-      <th>bearbeiten</th>
-      <th>köschen</th>
+      <th></th>
+      <th></th>
       <th>Benutzername</th>
       <th>Mitarbeitertype</th>
       <th>Vorname</th>
@@ -36,8 +37,8 @@ $stmt->bind_result($benutzername,$passwort,$mitarbeitertyp,$vorname,$nachname,$s
 while ($stmt->fetch()) {
 ?>
     <tr>
-      <td align="center"><a href="/operator_edit?benutzernahme=<?php echo $benutzername?>"><img src="images/icon_edit.png" ></a></td>
-      <td align="center"><a href="/operator_delete?benutzernahme=<?php echo $benutzername?>"><img src="images/icon_delete.png"></a></td>
+      <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=edit"?>"><img src="images/icon_edit.png"  alt="bearbeiten" ></a></td>
+      <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=delete"?>"><img src="images/icon_delete.png" alt="löschen"></a></td>
       <td><?php echo $benutzername ?></td>
       <td><?php echo $mitarbeitertyp ?></td>
       <td><?php echo $vorname ?></td>
@@ -50,5 +51,5 @@ while ($stmt->fetch()) {
     <!--Loop end-->
   </tbody>
 </table>
-
+</div>
 <? include ("inc/footer.php"); ?>

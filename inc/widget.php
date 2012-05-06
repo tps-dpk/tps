@@ -1,8 +1,9 @@
-<script src="scripts/jquery-1.6.1.min.js" type="text/javascript"></script>
+	<script src="scripts/jquery-1.6.1.min.js" type="text/javascript"></script>
     <script src="scripts/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="scripts/jquery.dataTables.columnFilter.js" type="text/javascript"></script>
     <script src="scripts/jquery.dataTables.pagination.js" type="text/javascript"></script>
     <link href="css/demo_table_jui.css" rel="stylesheet" type="text/css">
+
 <style type="text/css">
 /* BeginOAWidget_Instance_2586523: #dataTable */
 

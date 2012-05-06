@@ -8,7 +8,7 @@
 <h2>Anmeldung</h2>
 <br />
 <form method="get" action="#" accept-charset="utf-8"  >
-<table cellpadding="5" cellspacing="5" border="0" id="dataTable">
+<table cellpadding="5" cellspacing="5" border="0">
   <tbody>
     <tr>
       <td><label for="username">Benutzername: </label></td>
