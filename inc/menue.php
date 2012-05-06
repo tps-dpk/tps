@@ -20,12 +20,12 @@ EOF;
 echo <<<EOF
 		<li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="public/logout.php">Abmelden</a>
 		</li>
-		<li class="yuimenubaritem"><a class="yuimenubaritemlabel">OM</a>
+		<li class="yuimenubaritem"><a class="yuimenubaritemlabel">Mitarbeiter</a>
 	
 			<div id="operator" class="yuimenu">
 				<div class="bd">                                        
 					<ul>
-						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="operator.php">Anlegen</a></li>
+						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="operator.php?function=add">Anlegen</a></li>
 						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="operator_list.php">Anzeigen</a></li>
 					</ul>
 				</div>
