@@ -1,20 +1,6 @@
 <?php
 
-error_reporting(E_ALL);
-
-require("../config.php");
-
-function sendUnauthorized() {
-	header("HTTP/1.0 401 Unauthorized");
-	echo "Login failed!";
-	exit;
-}
-
-function sendBadRequest() {
-	header("HTTP/1.0 400 Bad Request");
-	echo "Invalid request!";
-	exit;
-}
+require("functions.php");
 
 session_start();
 
@@ -38,14 +24,14 @@ if ($status == "angenommen") {
 	sendBadRequest();
 }
 
-$dbConnection = new mysqli($dbHost, $dbUserName, $dbPassword, $dbName, $dbPort);
+$dbConnection = connect_db();
 $sql = "UPDATE auftrag SET auftragsstatus = ? WHERE auftragsnummer = ?";
 $statement = $dbConnection->prepare($sql);
 $statement->bind_param("si", $status, $_REQUEST["nummer"]);
 $statement->execute();
 
 if ($statement->affected_rows == 1) {
-	echo "ok";
+	echo "Ok";
 } else {
 	sendBadRequest();
 }
