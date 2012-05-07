@@ -2,19 +2,13 @@
 
 error_reporting(E_ALL);
 
-require("../config.php");
-
-function sendUnauthorized() {
-	header("HTTP/1.0 401 Unauthorized");
-	echo "Login failed!";
-	exit;
-}
+require("functions.php");
 
 if (empty($_REQUEST["name"]) || empty($_REQUEST["password"])) {
 	sendUnauthorized();
 }
 
-$dbConnection = new mysqli($dbHost, $dbUserName, $dbPassword, $dbName, $dbPort);
+$dbConnection = connect_db();
 $sql = "SELECT COUNT(*) FROM mitarbeiter WHERE benutzername = ? AND passwort = ? AND mitarbeitertyp = \"OM\"";
 $statement = $dbConnection->prepare($sql);
 $statement->bind_param("ss", strtoupper($_REQUEST["name"]), $_REQUEST["password"]);
