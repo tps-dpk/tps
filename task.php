@@ -4,6 +4,14 @@
 
 
 <?php
+
+if ( empty($_SESSION['username'])) { 
+include 'lib/redirect.php';
+movePage(403,"login.php");
+exit;
+
+};
+
 $auftragsnummer = $_GET['auftragsnummer'];
 $beschreibung = $_GET['beschreibung'];
 $zeit_von = $_GET['zeit_von'];
@@ -61,11 +69,7 @@ if (mysqli_connect_errno() == 0) {
 		else
 		{
 			$warnung="Der Auftrag-Eintrag konnte nicht hinzugef&uuml;gt werden.";
-		}
-
-	
-	
-	
+		}	
 	} elseif ( $submit == "edit") { 
 	
 		$sql = 'UPDATE auftrag SET beschreibung = ?, zeit_von = ?, zeit_bis = ?, auftragsstatus = ?, kundennummer = ?, benutzername = ? where auftragsnummer = ?';
@@ -108,7 +112,7 @@ if (mysqli_connect_errno() == 0) {
 				$warnung="Der Auftrag-Eintrag konnte nicht gelöscht werden.";
 			}
 		} else {
-			$warnung="Auftrag ($beschreibung) kann nur im Angelegt-Status gelöscht werden.";
+			$warnung="Auftrag ($beschreibung) kann nur im Angelegt-Status (C) gelöscht werden.";
 		}
 	
 	};
@@ -141,15 +145,15 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
     </tr>
     <tr>
       <td><label for="beschreibung">Beschreibung: </label></td>
-      <td><input name="beschreibung" id="beschreibung" class="required" type="text" value="<?php echo "$beschreibung";?>" <?php echo $visible['beschreibung']?> size="40"/></td>
+      <td><input name="beschreibung" id="beschreibung" class="required" title="Beschreibung ist notwendig" type="text" value="<?php echo "$beschreibung";?>" <?php echo $visible['beschreibung']?> size="40"/></td>
     </tr>
     <tr>
       <td><label for="zeit_von">Von: </label></td>
-      <td><input name="zeit_von" id="zeit_von" class="required" type="Text" value="<?php echo "$zeit_von";?>" <?php echo $visible['zeit_von']?> size="18"> </td>
+      <td><input name="zeit_von" id="zeit_von" class="required" type="Text" title="Zeit_von ist notwendig"value="<?php echo "$zeit_von";?>" <?php echo $visible['zeit_von']?> size="18"> </td>
     </tr>
     <tr>
       <td><label for="zeit_bis">Bis: </label></td>
-      <td><input name="zeit_bis" id="zeit_bis" class="required" type="text" value="<?php echo "$zeit_bis";?>" <?php echo $visible['zeit_bis'] ?> size="18"/></td>
+      <td><input name="zeit_bis" id="zeit_bis" class="required" type="text" title="Zeit_bis ist notwendig"value="<?php echo "$zeit_bis";?>" <?php echo $visible['zeit_bis'] ?> size="18"/></td>
     </tr>
     <tr>
       <td><label for="auftragsstatus">Auftragsstatus: </label></td>
@@ -165,10 +169,7 @@ if ( $visible['kundennummer']=="readonly" ) {
 <?php
 } else {
 ?>
-
-
-
-            <select name="kundennummer" class="validate-not-first" title="Kundennummer ist notwendig" onchange="javascript:document.getElementById('username').value=this.form.kundennummer.options[this.form.kundennummer.selectedIndex].value">
+	 <select name="kundennummer" class="validate-not-first" title="Kundennummer ist notwendig" onchange="javascript:document.getElementById('username').value=this.form.kundennummer.options[this.form.kundennummer.selectedIndex].value">
 				<option value="">Select:</option>
 	<?php
 	include 'lib/mysql.php'; 
@@ -197,18 +198,6 @@ if ( $visible['kundennummer']=="readonly" ) {
 ?>  
     </td>
     </tr>
-
-
-
-
-
-
-
-
-
-
-
-
     <tr>
       <td><label for="benutzername">Benutzername: </label></td>
       <td>
@@ -220,10 +209,7 @@ if ( $visible['benutzername']=="readonly" ) {
 <?php
 } else {
 ?>
-
-
-
-            <select name="benutzername" class="validate-not-first" title="Benutzername ist notwendig" onchange="javascript:document.getElementById('username').value=this.form.benutzername.options[this.form.benutzername.selectedIndex].value">
+		<select name="benutzername" class="validate-not-first" title="Benutzername ist notwendig" onchange="javascript:document.getElementById('username').value=this.form.benutzername.options[this.form.benutzername.selectedIndex].value">
 				<option value="">Select:</option>
 	<?php
 	include 'lib/mysql.php'; 
@@ -255,7 +241,7 @@ if ( $visible['benutzername']=="readonly" ) {
 </table>
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zurück" class="button" onClick="history.back()">
+<input type="button" VALUE="Zurück" class="button" onClick="location.href='task_list.php'">
 </form>
 </div>
 

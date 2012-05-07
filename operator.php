@@ -4,7 +4,15 @@
 
 <?php
 
+if ( empty($_SESSION['username'])) { 
+include 'lib/redirect.php';
+movePage(403,"login.php");
+exit;
+};
+
 include 'lib/operator.php'; 
+
+
 
 $benutzername = $_GET['benutzername'];
 $passwort = $_GET['passwort'];
@@ -204,7 +212,7 @@ if ( $visible['status']=="readonly" ) {
 </table>
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zurück" class="button" onClick="history.back()">
+<input type="button" VALUE="Zurück" class="button" onClick="location.href='operator_list.php'">
 </form>
 </div>
 

@@ -3,6 +3,12 @@
 
 <?php
 
+if ( empty($_SESSION['username'])) { 
+include 'lib/redirect.php';
+movePage(403,"login.php");
+exit;
+};
+
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 

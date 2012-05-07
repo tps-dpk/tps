@@ -3,6 +3,12 @@
 
 <?php
 
+if ( empty($_SESSION['username'])) { 
+include 'lib/redirect.php';
+movePage(403,"login.php");
+exit;
+};
+
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
@@ -16,7 +22,7 @@ $stmt->bind_result($benutzername,$passwort,$mitarbeitertyp,$vorname,$nachname,$s
 ?>
 
 <div id="Content">
-<h2>Operative Mitarbeiter</h2>
+<h2>Mitarbeiter</h2>
 </br>
 <table cellpadding="0" cellspacing="0" border="0" id="dataTable">
   <thead>

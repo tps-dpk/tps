@@ -1,3 +1,7 @@
+<div id="Logo">
+<img src="images/logo.jpg" alt="Logo" width="140" height="56" />
+</div>
+
 <div id="TPS_Head">
 <h1>Task Planning System</h1>
 </div>
@@ -58,11 +62,20 @@ echo <<<EOF
 		
 		</li>
 EOF;
+		
 }
-?>               
-	</ul>            
+?>   	                
+	</ul> 
+            
 	</div>
   </div>
+<div id="user_info" align="right">
+<?php 
+if ( ! empty($_SESSION['username'])) {
+	echo "<a>User:&nbsp;<i>".$_SESSION['username']."</i></a>"; 
+}
+?>
+</div>
 </div>
 
 

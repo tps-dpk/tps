@@ -2,6 +2,11 @@
 <? include ("inc/form.php"); ?>
 
 <?php
+
+
+header( 'Location: login.php' );
+
+
 $kundennummer = $_GET['kundennummer'];
 $name = $_GET['name'];
 $strasse = $_GET['strasse'];
@@ -160,7 +165,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zurück" class="button" onClick="history.back()">
+<input type="button" VALUE="Zurück" class="button" onClick="location.href='customer_list.php'">
 </form>
 </div>
 
