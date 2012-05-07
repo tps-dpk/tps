@@ -35,7 +35,6 @@ while ($stmt->fetch()) {
 }
 ?>
         </select>
-        <p id="msg">test</p>
         <input name="username" id="username" type="hidden"/>
 	  </td>
     </tr>
