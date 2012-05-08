@@ -112,7 +112,9 @@ input, textarea {
 		color:#fff;
 }
 
-
+#warning {
+		color:#F00
+}
 
 /* css for timepicker */
 .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }

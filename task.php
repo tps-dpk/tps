@@ -9,7 +9,6 @@ if ( empty($_SESSION['username'])) {
 include 'lib/redirect.php';
 movePage(403,"login.php");
 exit;
-
 };
 
 $auftragsnummer = $_GET['auftragsnummer'];
@@ -80,7 +79,7 @@ if (mysqli_connect_errno() == 0) {
 		// Pruefen ob der Eintrag efolgreich war
 		if ($statement->affected_rows == 1)
 		{
-			$info="Auftrag ($beschreibung) wurde geändert.";
+			$info="Auftrag ($beschreibung) wurde geändert werden.";
 		}
 		else
 		{
