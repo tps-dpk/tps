@@ -10,9 +10,6 @@ movePage(403,"login.php");
 exit;
 };
 
-include 'lib/operator.php'; 
-
-
 
 $benutzername = $_GET['benutzername'];
 $passwort = $_GET['passwort'];
