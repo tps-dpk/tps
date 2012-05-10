@@ -22,10 +22,10 @@ $function = $_GET['function'];
 $submit = $_GET['submit'];
 
 if ($function =="edit" ) { 
-	$action="ändern"; 
+	$action="&auml;ndern"; 
 	$visible['auftragsnummer']="readonly";
 } elseif ( $function == "delete") { 
-	$action="löschen"; 
+	$action="l&ouml;schen"; 
 	$visible['auftragsnummer']="readonly";
 	$visible['beschreibung']="readonly";
 	$visible['zeit_von']="readonly";
@@ -79,11 +79,11 @@ if (mysqli_connect_errno() == 0) {
 		// Pruefen ob der Eintrag efolgreich war
 		if ($statement->affected_rows == 1)
 		{
-			$info="Auftrag ($beschreibung) wurde geändert werden.";
+			$info="Auftrag ($beschreibung) wurde ge&auml;ndert werden.";
 		}
 		else
 		{
-			$warnung="Der Auftrag-Eintrag konnte nicht geändert.";
+			$warnung="Der Auftrag-Eintrag konnte nicht ge&auml;ndert.";
 		}
 	} elseif ( $submit == "delete") { 
 		$sql = 'SELECT count(*)  FROM auftrag WHERE auftragsnummer = ? and auftragsstatus = "C" ';
@@ -104,14 +104,14 @@ if (mysqli_connect_errno() == 0) {
 			// Pruefen ob der Eintrag efolgreich war
 			if ($statement->affected_rows == 1)
 			{
-				$info="Auftrag ($beschreibung) wurde gelöscht.";
+				$info="Auftrag ($beschreibung) wurde gel&ouml;scht.";
 			}
 			else
 			{
-				$warnung="Der Auftrag-Eintrag konnte nicht gelöscht werden.";
+				$warnung="Der Auftrag-Eintrag konnte nicht gel&ouml;scht werden.";
 			}
 		} else {
-			$warnung="Auftrag ($beschreibung) kann nur im Angelegt-Status (C) gelöscht werden.";
+			$warnung="Auftrag ($beschreibung) kann nur im Angelegt-Status (C) gel&ouml;scht werden.";
 		}
 	
 	};
@@ -240,7 +240,7 @@ if ( $visible['benutzername']=="readonly" ) {
 </table>
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zurück" class="button" onClick="location.href='task_list.php'">
+<input type="button" VALUE="Zur&uuml;ck" class="button" onClick="location.href='task_list.php'">
 </form>
 </div>
 

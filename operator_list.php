@@ -44,7 +44,7 @@ while ($stmt->fetch()) {
 ?>
     <tr>
       <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=edit"?>"><img src="images/icon_edit.png"  alt="bearbeiten" ></a></td>
-      <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=delete"?>"><img src="images/icon_delete.png" alt="löschen"></a></td>
+      <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=delete"?>"><img src="images/icon_delete.png" alt="l&ouml;schen"></a></td>
       <td><?php echo $benutzername ?></td>
       <td><?php echo $mitarbeitertyp ?></td>
       <td><?php echo $vorname ?></td>

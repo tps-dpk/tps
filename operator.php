@@ -26,10 +26,10 @@ $submit = $_GET['submit'];
 
 
 if ($function =="edit" ) { 
-	$action="ändern"; 
+	$action="&auml;ndern"; 
 	$visible['bunutzername']="readonly";
 } elseif ( $function == "delete") { 
-	$action="löschen"; 
+	$action="l&ouml;schen"; 
 	$visible['bunutzername']="readonly";
 	$visible['passwort']="readonly";
 	$visible['mitarbeitertyp']="readonly";
@@ -83,11 +83,11 @@ if (mysqli_connect_errno() == 0) {
 		// Pruefen ob der Eintrag efolgreich war
 		if ($statement->affected_rows == 1)
 		{
-			$info="Mitarbeiter ($benutzername) wurde geändert.";
+			$info="Mitarbeiter ($benutzername) wurde ge&auml;ndert.";
 		}
 		else
 		{
-			$warnung="Der Eintrag konnte nicht geändert.";
+			$warnung="Der Eintrag konnte nicht ge&auml;ndert.";
 		}
 	} elseif ( $submit == "delete") { 
 		$sql = 'SELECT count(*)  FROM auftrag WHERE benutzername = ?';
@@ -108,14 +108,14 @@ if (mysqli_connect_errno() == 0) {
 			// Pruefen ob der Eintrag efolgreich war
 			if ($statement->affected_rows == 1)
 			{
-				$info="Mitarbeiter ($benutzername) wurde gelöscht.";
+				$info="Mitarbeiter ($benutzername) wurde gel&ouml;scht.";
 			}
 			else
 			{
-				$warnung="Der Eintrag konnte nicht gelöscht werden.";
+				$warnung="Der Eintrag konnte nicht gel&ouml;scht werden.";
 			}
 		} else {
-			$warnung="Mitarbeiter ($benutzername) hat Aufträge ($count) zugeordnet und kann deshalb nicht gelöscht werden.";
+			$warnung="Mitarbeiter ($benutzername) hat Auftr&auml;ge ($count) zugeordnet und kann deshalb nicht gel&ouml;scht werden.";
 		}
 	
 	};
@@ -212,7 +212,7 @@ if ( $visible['status']=="readonly" ) {
 </table>
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zurück" class="button" onClick="location.href='operator_list.php'">
+<input type="button" VALUE="Zur&uuml;ck" class="button" onClick="location.href='operator_list.php'">
 </form>
 </div>
 

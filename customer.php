@@ -3,8 +3,11 @@
 
 <?php
 
-
-header( 'Location: login.php' );
+if ( empty($_SESSION['username'])) { 
+include 'lib/redirect.php';
+movePage(403,"login.php");
+exit;
+};
 
 
 $kundennummer = $_GET['kundennummer'];
@@ -18,10 +21,10 @@ $function = $_GET['function'];
 $submit = $_GET['submit'];
 
 if ($function =="edit" ) { 
-	$action="ändern"; 
+	$action="&auml;ndern"; 
 	$visible['kundennummer']="readonly";
 } elseif ( $function == "delete") { 
-	$action="löschen"; 
+	$action="l&ouml;schen"; 
 	$visible['kundennummer']="readonly";
 	$visible['name']="readonly";
 	$visible['strasse']="readonly";
@@ -73,11 +76,11 @@ if (mysqli_connect_errno() == 0) {
 		// Pruefen ob der Eintrag efolgreich war
 		if ($statement->affected_rows == 1)
 		{
-			$info="Kunde ($name) wurde geändert.";
+			$info="Kunde ($name) wurde ge&auml;ndert.";
 		}
 		else
 		{
-			$warnung="Der Kunde-Eintrag konnte nicht geändert.";
+			$warnung="Der Kunde-Eintrag konnte nicht ge&auml;ndert.";
 		}
 	} elseif ( $submit == "delete") { 
 		$sql = 'SELECT count(*)  FROM auftrag WHERE kundennummer = ?';
@@ -98,14 +101,14 @@ if (mysqli_connect_errno() == 0) {
 			// Pruefen ob der Eintrag efolgreich war
 			if ($statement->affected_rows == 1)
 			{
-				$info="Kunde ($name) wurde gelöscht.";
+				$info="Kunde ($name) wurde gel&ouml;scht.";
 			}
 			else
 			{
-				$warnung="Der Kunden-Eintrag konnte nicht gelöscht werden.";
+				$warnung="Der Kunden-Eintrag konnte nicht gel&ouml;scht werden.";
 			}
 		} else {
-			$warnung="Kunde ($name) hat Aufträge ($count) zugeordnet und kann deshalb nicht gelöscht werden.";
+			$warnung="Kunde ($name) hat Auftr&auml;ge ($count) zugeordnet und kann deshalb nicht gel&ouml;scht werden.";
 		}
 	
 	};
@@ -165,7 +168,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zurück" class="button" onClick="location.href='customer_list.php'">
+<input type="button" VALUE="Zur&uuml;ck" class="button" onClick="location.href='customer_list.php'">
 </form>
 </div>
 

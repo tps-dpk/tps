@@ -7,7 +7,7 @@
 <br />
 </div>
 <div id="Messages">
-<p id="info">Bitte entsprechende Menü Einträge auswählen.</p>
+<p id="info"></p>
 <p id="warning"></p>
 </div>
 

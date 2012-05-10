@@ -47,7 +47,7 @@ while ($stmt->fetch()) {
 
     <tr>
       <td align="center"><a href="customer.php?<?php echo "kundennummer=$kundennummer&name=$name&strasse=$strasse&hausnummer=$hausnummer&plz=$plz&ort=$ort&telefonnummer=$telefonnummer&function=edit"; ?>"><img src="images/icon_edit.png"  alt="bearbeiten" ></a></td>
-      <td align="center"><a href="customer.php?<?php echo "kundennummer=$kundennummer&name=$name&strasse=$strasse&hausnummer=$hausnummer&plz=$plz&ort=$ort&telefonnummer=$telefonnummer&function=delete"; ?>"><img src="images/icon_delete.png" alt="löschen"></a></td>
+      <td align="center"><a href="customer.php?<?php echo "kundennummer=$kundennummer&name=$name&strasse=$strasse&hausnummer=$hausnummer&plz=$plz&ort=$ort&telefonnummer=$telefonnummer&function=delete"; ?>"><img src="images/icon_delete.png" alt="l&ouml;schen"></a></td>
       <td><?php echo $kundennummer; ?></td>
       <td><?php echo $name; ?></td>
       <td><?php echo $strasse; ?></td>
