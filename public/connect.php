@@ -2,28 +2,28 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
-	session_start();
-       require_once('../lib/login.class');
- // Benutzernamen holen
+include '../lib/mysql.php';
+
+// Benutzernamen holen
 $username = $_GET['username'];
 // Kennwort holen
 $password = $_GET['password'];
 
+$sql = 'SELECT passwort FROM mitarbeiter WHERE benutzername = ?';
+$statement = $db_connection->prepare($sql);
+$statement->bind_param("s", $username);
+$statement->execute();
+$statement->bind_result($dbpw);
 
-// PHP Login Instanz erzeugen
-$login = new login();
-// Loginroutine aufrufen
-$rc=$login->checklogin($username, $password);
-
-//print("returncode="+$rc);
-
-if($rc) {
-	$_SESSION['username'] = $username;
-	// Login war erfolgreich
-	echo 1;
-} else {
+while ($statement->fetch()) {
+    if ($password == $dbpw) {
+        session_start();
+        $_SESSION['username'] = $username;
+        // Login war erfolgreich
+        echo 1;
+    } else {
 	// Login fehlgeschlgen
 	echo 0;
-
+    }
 }
 ?>

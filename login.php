@@ -44,7 +44,7 @@ while ($stmt->fetch()) {
     </tr>
    </tbody>
 </table>
-<input type="submit" onclick="login()" value="Login">
+<input type="button" onclick="login()" value="Login">
 </form>
 
 </div>
