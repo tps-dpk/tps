@@ -168,9 +168,9 @@ function FIC_checkForm(e) {
 
 	if (!all_valid) {
 		if (errs.length > 0){
-			alert("Folgende Fehler wurden gefunden:\n\n  * "+errs.join("\n  * ")+"\n\nBitte die Fehler überprüfen und noch einmal versuchen");
+			alert(unescape("Folgende Fehler wurden gefunden%3A")+"\n\n  * "+errs.join("\n  * ")+"\n\n"+unescape("Bitte die Fehler %FCberpr%FCfen und noch einmal versuchen"));
 		} else {
-			alert('Einige benötigte Werte sind nicht korrekt. Bitte Wertebereich der rot markierten Felder überprüfen.');
+			alert(unescape("Einige ben%F6tigte Werte sind nicht korrekt. Bitte Wertebereich der rot markierten Felder %FCberpr%FCfen"));
 		}
 		YAHOO.util.Event.stopEvent(e);
 	}

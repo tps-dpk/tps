@@ -6,6 +6,8 @@ var password = $("#password").val();
 if ((username == '') || (password == '')) {
     $("#info").html('');
     $("#warning").html("Benutzername und Kennwort erforderlich !");
+    setTimeout("window.location.reload()",4000);
+    setTimeout("tb_remove()",3000);
 } else {
    $.get("public/connect.php?username="+username+"&password="+password, function(rc) {
    if (rc == 0) {

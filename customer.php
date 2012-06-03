@@ -20,10 +20,10 @@ $telefonnummer = $_GET['telefonnummer'];
 $function = $_GET['function'];
 $submit = $_GET['submit'];
 
-if ($function =="edit" ) { 
+if ($function =="bearbeiten" ) { 
 	$action="&auml;ndern"; 
 	$visible['kundennummer']="readonly";
-} elseif ( $function == "delete") { 
+} elseif ( $function == "loeschen") { 
 	$action="l&ouml;schen"; 
 	$visible['kundennummer']="readonly";
 	$visible['name']="readonly";
@@ -33,7 +33,7 @@ if ($function =="edit" ) {
 	$visible['ort']="readonly";
 	$visible['telefonnummer']="readonly";
 } else { 
-	$action="hinzuf&uuml;gen"; 
+	$action="hinzufuegen"; 
 	$visible['kundennummer']="readonly";
 };
 
@@ -48,7 +48,7 @@ include 'lib/mysql.php';
 
 if (mysqli_connect_errno() == 0) {
 
-	if ($submit =="add" ) { 
+	if ($submit =="hinzufuegen" ) { 
 		$sql = 'INSERT INTO kunde (`name`, `strasse`, `hausnummer`, `plz`, `ort`, `telefonnummer`) VALUES (?, ?, ?, ?, ?, ? )';
 		$statement = $db_connection->prepare( $sql );
 		$statement->bind_param( 'ssiiss',$name, $strasse, $hausnummer, $plz, $ort, $telefonnummer );
@@ -66,7 +66,7 @@ if (mysqli_connect_errno() == 0) {
 	
 	
 	
-	} elseif ( $submit == "edit") { 
+	} elseif ( $submit == "bearbeiten") { 
 	
 		$sql = 'UPDATE kunde SET name = ?, strasse = ?, hausnummer = ?, plz = ?, ort = ?, telefonnummer = ? where kundennummer = ?';
 	
@@ -82,7 +82,7 @@ if (mysqli_connect_errno() == 0) {
 		{
 			$warnung="Der Kunde-Eintrag konnte nicht ge&auml;ndert.";
 		}
-	} elseif ( $submit == "delete") { 
+	} elseif ( $submit == "loeschen") { 
 		$sql = 'SELECT count(*)  FROM auftrag WHERE kundennummer = ?';
 		$statement = $db_connection->prepare($sql);
 		$statement->bind_param( 's', $kundennummer );
@@ -168,7 +168,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zur&uuml;ck" class="button" onClick="location.href='customer_list.php'">
+<input type="button" VALUE="zur&uuml;ck" class="button" onClick="location.href='customer_list.php'">
 </form>
 </div>
 

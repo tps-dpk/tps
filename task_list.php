@@ -46,8 +46,8 @@ while ($stmt->fetch()) {
 ?>
     
     <tr>
-      <td align="center"><a href="task.php?<?php echo "auftragsnummer=$auftragsnummer&beschreibung=$beschreibung&zeit_von=$zeit_von&zeit_bis=$zeit_bis&auftragsstatus=$auftragsstatus&kundennummer=$kundennummer&benutzername=$benutzername&function=edit"; ?>"><img src="images/icon_edit.png" alt="bearbeiten"></a></td>
-      <td align="center"><a href="task.php?<?php echo "auftragsnummer=$auftragsnummer&beschreibung=$beschreibung&zeit_von=$zeit_von&zeit_bis=$zeit_bis&auftragsstatus=$auftragsstatus&kundennummer=$kundennummer&benutzername=$benutzername&function=delete"; ?>"><img src="images/icon_delete.png" alt="l&ouml;schen"></a></td>
+      <td align="center"><a href="task.php?<?php echo "auftragsnummer=$auftragsnummer&beschreibung=$beschreibung&zeit_von=$zeit_von&zeit_bis=$zeit_bis&auftragsstatus=$auftragsstatus&kundennummer=$kundennummer&benutzername=$benutzername&function=bearbeiten"; ?>"><img src="images/icon_edit.png" alt="bearbeiten"></a></td>
+      <td align="center"><a href="task.php?<?php echo "auftragsnummer=$auftragsnummer&beschreibung=$beschreibung&zeit_von=$zeit_von&zeit_bis=$zeit_bis&auftragsstatus=$auftragsstatus&kundennummer=$kundennummer&benutzername=$benutzername&function=loeschen"; ?>"><img src="images/icon_delete.png" alt="l&ouml;schen"></a></td>
       <td><?php echo $beschreibung?></td>
       <td><?php echo $zeit_von?></td>
       <td><?php echo $zeit_bis?></td>

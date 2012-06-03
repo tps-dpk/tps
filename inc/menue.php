@@ -29,7 +29,7 @@ echo <<<EOF
 			<div id="operator" class="yuimenu">
 				<div class="bd">                                        
 					<ul>
-						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="operator.php?function=add">Anlegen</a></li>
+						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="operator.php?function=hinzufuegen">Anlegen</a></li>
 						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="operator_list.php">Anzeigen</a></li>
 					</ul>
 				</div>
@@ -40,7 +40,7 @@ echo <<<EOF
 			<div id="custom" class="yuimenu">
 				<div class="bd">                    
 					<ul>
-						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="customer.php?function=add">Anlegen</a></li>
+						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="customer.php?function=hinzufuegen">Anlegen</a></li>
 						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="customer_list.php">Anzeigen</a></li>
 					</ul>
 				</div>
@@ -53,7 +53,7 @@ echo <<<EOF
 			<div id="task" class="yuimenu">
 				<div class="bd">                    
 					<ul>
-						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="task.php?function=add">Anlegen</a></li>
+						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="task.php?function=hinzufuegen">Anlegen</a></li>
 						<li class="yuimenuitem"><a class="yuimenuitemlabel" href="task_list.php">Anzeigen</a></li>
 					</ul>                    
 				</div>

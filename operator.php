@@ -22,10 +22,10 @@ $submit = $_GET['submit'];
 
 
 
-if ($function =="edit" ) { 
+if ($function =="bearbeiten" ) { 
 	$action="&auml;ndern"; 
 	$visible['bunutzername']="readonly";
-} elseif ( $function == "delete") { 
+} elseif ( $function == "loeschen") { 
 	$action="l&ouml;schen"; 
 	$visible['bunutzername']="readonly";
 	$visible['passwort']="readonly";
@@ -34,7 +34,7 @@ if ($function =="edit" ) {
 	$visible['nachname']="readonly";
 	$visible['status']="readonly";
 } else { 
-    $function="add";
+    $function="hinzufuegen";
 	$action="hinzuf&uuml;gen"; 
 };
 
@@ -52,7 +52,7 @@ include 'lib/mysql.php';
 
 if (mysqli_connect_errno() == 0) {
 
-	if ($submit =="add" ) { 
+	if ($submit =="hinzufuegen" ) { 
 		$sql = 'INSERT INTO mitarbeiter (`benutzername`, `passwort`, `mitarbeitertyp`, `vorname`, `nachname`, `status`) VALUES (?, ?, ?, ?, ?, ? )';
 		$statement = $db_connection->prepare( $sql );
 		$statement->bind_param( 'ssssss',$benutzername, $passwort, $mitarbeitertyp, $vorname, $nachname, $status );
@@ -70,7 +70,7 @@ if (mysqli_connect_errno() == 0) {
 	
 	
 	
-	} elseif ( $submit == "edit") { 
+	} elseif ( $submit == "bearbeiten") { 
 	
 		$sql = 'UPDATE mitarbeiter SET passwort = ?, mitarbeitertyp = ?, vorname = ?, nachname = ?, status = ? where benutzername = ?';
 	
@@ -86,7 +86,7 @@ if (mysqli_connect_errno() == 0) {
 		{
 			$warnung="Der Eintrag konnte nicht ge&auml;ndert.";
 		}
-	} elseif ( $submit == "delete") { 
+	} elseif ( $submit == "loeschen") { 
 		$sql = 'SELECT count(*)  FROM auftrag WHERE benutzername = ?';
 		$statement = $db_connection->prepare($sql);
 		$statement->bind_param( 's', $benutzername );
@@ -209,7 +209,7 @@ if ( $visible['status']=="readonly" ) {
 </table>
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zur&uuml;ck" class="button" onClick="location.href='operator_list.php'">
+<input type="button" VALUE="zur&uuml;ck" class="button" onClick="location.href='operator_list.php'">
 </form>
 </div>
 

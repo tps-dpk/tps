@@ -14,7 +14,7 @@ error_reporting(E_ALL | E_STRICT);
 
 
 include 'lib/mysql.php'; 
-$sql = 'SELECT benutzername, passwort, mitarbeitertyp, vorname, nachname, status FROM mitarbeiter';
+$sql = 'SELECT benutzername, passwort, mitarbeitertyp, vorname, nachname, status FROM mitarbeiter where mitarbeitertyp = "OM"';
 $stmt = $db_connection->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($benutzername,$passwort,$mitarbeitertyp,$vorname,$nachname,$status );
@@ -43,8 +43,8 @@ $stmt->bind_result($benutzername,$passwort,$mitarbeitertyp,$vorname,$nachname,$s
 while ($stmt->fetch()) {
 ?>
     <tr>
-      <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=edit"?>"><img src="images/icon_edit.png"  alt="bearbeiten" ></a></td>
-      <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=delete"?>"><img src="images/icon_delete.png" alt="l&ouml;schen"></a></td>
+      <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=bearbeiten"?>"><img src="images/icon_edit.png"  alt="bearbeiten" ></a></td>
+      <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=loeschen"?>"><img src="images/icon_delete.png" alt="l&ouml;schen"></a></td>
       <td><?php echo $benutzername ?></td>
       <td><?php echo $mitarbeitertyp ?></td>
       <td><?php echo $vorname ?></td>

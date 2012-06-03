@@ -21,10 +21,10 @@ $benutzername = $_GET['benutzername'];
 $function = $_GET['function'];
 $submit = $_GET['submit'];
 
-if ($function =="edit" ) { 
+if ($function =="bearbeiten" ) { 
 	$action="&auml;ndern"; 
 	$visible['auftragsnummer']="readonly";
-} elseif ( $function == "delete") { 
+} elseif ( $function == "loeschen") { 
 	$action="l&ouml;schen"; 
 	$visible['auftragsnummer']="readonly";
 	$visible['beschreibung']="readonly";
@@ -69,7 +69,7 @@ if (mysqli_connect_errno() == 0) {
 		{
 			$warnung="Der Auftrag-Eintrag konnte nicht hinzugef&uuml;gt werden.";
 		}	
-	} elseif ( $submit == "edit") { 
+	} elseif ( $submit == "bearbeiten") { 
 	
 		$sql = 'UPDATE auftrag SET beschreibung = ?, zeit_von = ?, zeit_bis = ?, auftragsstatus = ?, kundennummer = ?, benutzername = ? where auftragsnummer = ?';
 	
@@ -85,7 +85,7 @@ if (mysqli_connect_errno() == 0) {
 		{
 			$warnung="Der Auftrag-Eintrag konnte nicht ge&auml;ndert.";
 		}
-	} elseif ( $submit == "delete") { 
+	} elseif ( $submit == "loeschen") { 
 		$sql = 'SELECT count(*)  FROM auftrag WHERE auftragsnummer = ? and auftragsstatus = "C" ';
 		$statement = $db_connection->prepare($sql);
 		$statement->bind_param( 's', $auftragsnummer);
@@ -240,7 +240,7 @@ if ( $visible['benutzername']=="readonly" ) {
 </table>
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
 <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
-<input type="button" VALUE="Zur&uuml;ck" class="button" onClick="location.href='task_list.php'">
+<input type="button" VALUE="zur&uuml;ck" class="button" onClick="location.href='task_list.php'">
 </form>
 </div>
 
