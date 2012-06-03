@@ -49,8 +49,6 @@ $auftragsstatusb['C']="Angelegt";
 ?>
 
 <?php 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
 include 'lib/mysql.php';
 
 if (mysqli_connect_errno() == 0) {
@@ -123,7 +121,6 @@ if (mysqli_connect_errno() == 0) {
 }
 
 
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
 
 <div id="Form">

@@ -9,10 +9,6 @@ movePage(403,"login.php");
 exit;
 };
 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-
-
 include 'lib/mysql.php'; 
 $sql = 'SELECT kundennummer, name, strasse, hausnummer, plz, ort, telefonnummer FROM kunde';
 $stmt = $db_connection->prepare($sql);

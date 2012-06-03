@@ -3,10 +3,6 @@
 
 <?php
 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-
-
 include 'lib/mysql.php'; 
 $sql = "SELECT benutzername, vorname, nachname, status FROM mitarbeiter where mitarbeitertyp = 'DP'";
 $stmt = $db_connection->prepare($sql);
