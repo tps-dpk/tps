@@ -4,11 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
 <title>Task Planning System</title>
 
-    <link type='text/css' href='YUI/2.9/build/fonts/fonts-min.css' rel='stylesheet'/>
-    <link type='text/css' href='YUI/2.9/build/menu/assets/skins/sam/menu.css' rel='stylesheet'/>
-	<script type='text/javascript' src='YUI/2.9/build/yahoo-dom-event/yahoo-dom-event.js'></script>
-	<script type='text/javascript' src='YUI/2.9/build/container/container_core-min.js'>		</script>
-	<script type='text/javascript' src='YUI/2.9/build/menu/menu-min.js'></script>
+    <link type='text/css' href='js/YUI/2.9/build/fonts/fonts-min.css' rel='stylesheet'/>
+    <link type='text/css' href='js/YUI/2.9/build/menu/assets/skins/sam/menu.css' rel='stylesheet'/>
+	<script type='text/javascript' src='js/YUI/2.9/build/yahoo-dom-event/yahoo-dom-event.js'></script>
+	<script type='text/javascript' src='js/YUI/2.9/build/container/container_core-min.js'>		</script>
+	<script type='text/javascript' src='js/YUI/2.9/build/menu/menu-min.js'></script>
 
 	<script type="text/javascript" src="js/tps.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
