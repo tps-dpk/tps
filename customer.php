@@ -37,7 +37,7 @@ if ($function =="bearbeiten" ) {
 	$visible['kundennummer']="readonly";
 };
 
-
+$flag="";
 ?>
 
 
@@ -52,12 +52,15 @@ if (mysqli_connect_errno() == 0) {
 		$statement->bind_param( 'ssiiss',$name, $strasse, $hausnummer, $plz, $ort, $telefonnummer );
 		$statement->execute();
 		// Pruefen ob der Eintrag efolgreich war
-		if ($statement->affected_rows == 1)
-		{
+		if ($statement->affected_rows == 1) {
 			$info="Kunde ($name) wurde angelegt";
-		}
-		else
-		{
+                        $name = "";
+                        $strasse = "";
+                        $hausnummer = "";
+                        $plz = "";
+                        $ort = "";
+                        $telefonnummer = "";
+		} else {
 			$warnung="Der Kunden-Eintrag konnte nicht hinzugef&uuml;gt werden.";
 		}
 
@@ -72,12 +75,9 @@ if (mysqli_connect_errno() == 0) {
 		$statement->bind_param( 'sssisss', $name, $strasse, $hausnummer, $plz, $ort, $telefonnummer, $kundennummer );
 		$statement->execute();
 		// Pruefen ob der Eintrag efolgreich war
-		if ($statement->affected_rows == 1)
-		{
+		if ($statement->affected_rows == 1) {
 			$info="Kunde ($name) wurde ge&auml;ndert.";
-		}
-		else
-		{
+		} else {
 			$warnung="Der Kunde-Eintrag konnte nicht ge&auml;ndert werden.";
 		}
 	} elseif ( $submit == "loeschen") { 
@@ -97,12 +97,10 @@ if (mysqli_connect_errno() == 0) {
 			$statement->bind_param( 's', $kundennummer );
 			$statement->execute();
 			// Pruefen ob der Eintrag efolgreich war
-			if ($statement->affected_rows == 1)
-			{
+			if ($statement->affected_rows == 1) {
 				$info="Kunde ($name) wurde gel&ouml;scht.";
-			}
-			else
-			{
+                                $flag="deleted";
+			} else {
 				$warnung="Der Kunden-Eintrag konnte nicht gel&ouml;scht werden.";
 			}
 		} else {
@@ -164,7 +162,9 @@ if (mysqli_connect_errno() == 0) {
 </table>
 
 <input name="function" id="function" type="hidden" value="<?php echo "$function";?>" />
-<input name="submit" value="<?php echo $function;?>" class="button" type="submit">
+<?php if ($flag != "deleted" ) { ?>
+        <input name="submit" value="<?php echo $function;?>" class="button" type="submit">
+<?php } ?>
 <input type="button" VALUE="zur&uuml;ck" class="button" onClick="location.href='customer_list.php'">
 </form>
 </div>
