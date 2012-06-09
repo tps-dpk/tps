@@ -11,7 +11,7 @@ if ((username == '') || (password == '')) {
     $("#warning").html("Benutzername und Kennwort erforderlich !");
     console.log("vars not defined");
 } else {
-   $.get("public/connect.php?username="+username+"&password="+password, function(rc) {
+   $.get("connect.php?username="+username+"&password="+password, function(rc) {
    console.log("start");
    console.log(rc);
    if (rc == 0) {

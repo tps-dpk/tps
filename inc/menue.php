@@ -22,7 +22,7 @@ EOF;
 }else {
 
 echo <<<EOF
-		<li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="public/logout.php">Abmelden</a>
+		<li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="logout.php">Abmelden</a>
 		</li>
 		<li class="yuimenubaritem"><a class="yuimenubaritemlabel">Mitarbeiter</a>
 	
