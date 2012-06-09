@@ -48,7 +48,7 @@ echo <<<EOF
 		
 		</li>
 	
-		<li class="yuimenubaritem"><a class="yuimenubaritemlabel">Aufgabe</a>
+		<li class="yuimenubaritem"><a class="yuimenubaritemlabel">Auftrag</a>
 	
 			<div id="task" class="yuimenu">
 				<div class="bd">                    
@@ -72,7 +72,7 @@ EOF;
 <div id="user_info" align="right">
 <?php 
 if ( ! empty($_SESSION['username'])) {
-	echo "<a>User:&nbsp;<i>".$_SESSION['username']."</i></a>"; 
+	echo "<a>Benutzer:&nbsp;<i>".$_SESSION['username']."</i></a>"; 
 }
 ?>
 </div>

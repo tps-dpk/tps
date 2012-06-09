@@ -82,7 +82,7 @@ if (mysqli_connect_errno() == 0) {
 		}
 		else
 		{
-			$warnung="Der Eintrag konnte nicht ge&auml;ndert.";
+			$warnung="Der Eintrag konnte nicht ge&auml;ndert werden.";
 		}
 	} elseif ( $submit == "loeschen") { 
 		$sql = 'SELECT count(*)  FROM auftrag WHERE benutzername = ?';
@@ -159,8 +159,7 @@ if ( $visible['mitarbeitertyp']=="readonly" ) {
 ?>
 
     	<select name="mitarbeitertyp" class="validate-not-first" title="Mitarbeitertyp ist notwendig" >
-            <option value="">Select:</option>
-            <option value="DP" <?php if ( $mitarbeitertyp == "DP" ) { echo 'selected="selected"';}; ?>><?php echo $mitarbeitertypb['DP']?></option>
+            <option value="">Auswahl:</option>
             <option value="OM" <?php if ( $mitarbeitertyp == "OM" ) { echo 'selected="selected"';}; ?>><?php echo $mitarbeitertypb['OM']?></option>
     	</select>
 <?php

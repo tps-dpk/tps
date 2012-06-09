@@ -21,7 +21,7 @@ $stmt->bind_result($benutzername,$vorname,$nachname,$status );
       <td><label for="benutzername">Benutzername: </label></td>
       <td>
 		<select name="benutzername" class="validate-not-first" title="Benutzername ist notwendig" onchange="javascript:document.getElementById('username').value=this.form.benutzername.options[this.form.benutzername.selectedIndex].value">
-				<option value="">Select:</option>
+				<option value="">Auswahl:</option>
 <?php
 while ($stmt->fetch()) {
 ?>

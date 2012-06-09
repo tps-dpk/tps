@@ -78,7 +78,7 @@ if (mysqli_connect_errno() == 0) {
 		}
 		else
 		{
-			$warnung="Der Kunde-Eintrag konnte nicht ge&auml;ndert.";
+			$warnung="Der Kunde-Eintrag konnte nicht ge&auml;ndert werden.";
 		}
 	} elseif ( $submit == "loeschen") { 
 		$sql = 'SELECT count(*)  FROM auftrag WHERE kundennummer = ?';

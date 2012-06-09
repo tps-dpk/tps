@@ -22,8 +22,8 @@ $stmt->bind_result($kundennummer,$name,$strasse,$hausnummer,$plz,$ort,$telefonnu
 <table cellpadding="0" cellspacing="0" border="0" id="dataTable">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
+      <th>B</th>
+      <th>L</th>
       <th>Kundennummer</th>
       <th>Name</th>
       <th>Strasse</th>

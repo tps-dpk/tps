@@ -9,6 +9,8 @@ movePage(403,"login.php");
 exit;
 };
 
+$mitarbeitertypb['OM']="Operator";
+$mitarbeitertypb['DP']="Disponente";
 
 include 'lib/mysql.php'; 
 $sql = 'SELECT benutzername, passwort, mitarbeitertyp, vorname, nachname, status FROM mitarbeiter where mitarbeitertyp = "OM"';
@@ -24,10 +26,9 @@ $stmt->bind_result($benutzername,$passwort,$mitarbeitertyp,$vorname,$nachname,$s
 <table cellpadding="0" cellspacing="0" border="0" id="dataTable">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
+      <th>B</th>
+      <th>L</th>
       <th>Benutzername</th>
-      <th>Mitarbeitertype</th>
       <th>Vorname</th>
       <th>Nachnahme</th>
       <th>Status</th>
@@ -38,15 +39,19 @@ $stmt->bind_result($benutzername,$passwort,$mitarbeitertyp,$vorname,$nachname,$s
     
 <?php
 while ($stmt->fetch()) {
+    if (isset($status) AND $status == "X") {
+        $statusb="aktiv";
+    } else {
+        $statusb="deaktiv";
+    }
 ?>
     <tr>
       <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=bearbeiten"?>"><img src="images/icon_edit.png"  alt="bearbeiten" ></a></td>
       <td align="center"><a href="operator.php?<?php echo "benutzername=$benutzername&passwort=$passwort&mitarbeitertyp=$mitarbeitertyp&vorname=$vorname&nachname=$nachname&status=$status&function=loeschen"?>"><img src="images/icon_delete.png" alt="l&ouml;schen"></a></td>
       <td><?php echo $benutzername ?></td>
-      <td><?php echo $mitarbeitertyp ?></td>
       <td><?php echo $vorname ?></td>
       <td><?php echo $nachname ?></td>
-      <td><?php echo $status ?></td>
+      <td><?php echo $statusb ?></td>
     </tr>
 <?php
 }
